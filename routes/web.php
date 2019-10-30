@@ -11,8 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'GenresController@index');
 
 Route::get('/genres/{genre_id}', 'GenresController@show');
