@@ -28,7 +28,6 @@ class CreateGenresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sub_genres');
         Schema::dropIfExists('genres');
     }
 }
