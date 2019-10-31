@@ -13,4 +13,6 @@
 
 Route::get('/', 'GenresController@index');
 
-Route::get('/genres/{genre_id}', 'GenresController@show');
+Route::get('/genres/{genre_id}', 'SubGenresController@index');
+
+Route::get('/genres', 'GenresController@index');
