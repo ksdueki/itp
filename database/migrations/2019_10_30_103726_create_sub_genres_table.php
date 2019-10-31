@@ -22,8 +22,7 @@ class CreateSubGenresTable extends Migration
             $table->foreign('genre_id')
                 ->references('id')
                 ->on('genres')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
