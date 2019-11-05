@@ -11,11 +11,11 @@
 |
 */
 
-Route::get('/', 'GenresController@index');
+// Route::get('/', 'GenresController@index');
 
-Route::get('/genres/{genre_id}', 'SubGenresController@index');
 
 Route::get('/genres', 'GenresController@index');
+Route::get('/genres/{genre_id}/subgenres', 'SubGenresController@index');
 
 Route::get('/prefs', 'PrefecturesController@index');
 Route::get('/prefs/{pref_code}/cities', 'CitiesController@index');
