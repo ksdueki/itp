@@ -16,3 +16,7 @@ Route::get('/', 'GenresController@index');
 Route::get('/genres/{genre_id}', 'SubGenresController@index');
 
 Route::get('/genres', 'GenresController@index');
+
+Route::get('/prefs', 'PrefecturesController@index');
+Route::get('/prefs/{pref_code}/cities', 'CitiesController@index');
+Route::get('/prefs/{pref_code}/cities/{city_code}/towns', 'TownsController@index');

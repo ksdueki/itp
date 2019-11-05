@@ -17,7 +17,7 @@ class CreateTownsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('code');
-            $table->string('city_code');
+            $table->string('pref_city_code');
             $table->timestamps();
         });
     }
