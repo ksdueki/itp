@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  title: Swagger Petstore
+  title: iタウンページ情報取得WebAPI
   description: "iタウンページのジャンルと、地域選択の一覧を取得するためのAPIです。"
   license:
     name: Apache 2.0
