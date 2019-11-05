@@ -1,0 +1,93 @@
+openapi: 3.0.1
+info:
+  title: Swagger Petstore
+  description: "iタウンページのジャンルと、地域選択の一覧を取得するためのAPIです。"
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+servers:
+  - url: https://aok-net.jp/itownpage/itp/public
+tags:
+  - name: genre
+    description: ジャンル
+  - name: area
+    description: 地域選択
+paths:
+  /genres:
+    get:
+      tags:
+        - genre
+      summary: 大ジャンル一覧
+      operationId: indexGenres
+      responses:
+        200:
+          description: successful operation
+  /genres/{genreParam}/subgenres:
+    get:
+      tags:
+        - genre
+      summary: 中ジャンル一覧
+      description: 中ジャンル一覧を返却します
+      operationId: indexSubgenres
+      parameters:
+        - name: genreParam
+          in: path
+          description: param of genre to return
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        200:
+          description: successful operation
+  /prefs:
+    get:
+      tags:
+        - area
+      summary: 地域選択（Lv1）
+      description: 都道府県の選択
+      operationId: indexPrefectures
+      responses:
+        200:
+          description: successful operation
+  /prefs/{pref_code}/cities:
+    get:
+      tags:
+        - area
+      summary: 地域選択（Lv2）
+      description: 市町村の選択
+      operationId: indexCities
+      parameters:
+        - name: pref_code
+          in: path
+          description: 都道府県コードを指定
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: successful operation
+  /prefs/{pref_code}/cities/{city_code}/towns:
+    get:
+      tags:
+        - area
+      summary: 地域選択（Lv3）
+      description: 町域名の選択
+      operationId: indexTowns
+      parameters:
+        - name: pref_code
+          in: path
+          description: 都道府県コードを指定
+          required: true
+          schema:
+            type: string
+        - name: city_code
+          in: path
+          description: 市町村コードを指定
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: successful operation
