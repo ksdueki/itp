@@ -175,10 +175,6 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
-        // OpenAPI用（Swagger）
-        // https://vyuldashev.github.io/laravel-openapi/#installation
-        Vyuldashev\LaravelOpenApi\OpenApiServiceProvider::class,
     ],
 
     /*
