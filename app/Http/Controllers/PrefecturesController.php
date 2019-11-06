@@ -17,15 +17,6 @@ class PrefecturesController extends Controller
                 'description' => "prefname=".$item->name,
             ];
         });
-
-        return response()->xml(
-            [
-                'channel' => [
-                    'title' => 'iタウンページ 地域の絞り込み Level1 都道府県',
-                    'linkBase' => 'http://www.aok-net.jp/',
-                    'items' => $items->all()
-                ]
-            ]);
+        return response()->view('xmls.prefecture',compact('items'))->header('Content-Type', 'text/xml');
     }
-
 }

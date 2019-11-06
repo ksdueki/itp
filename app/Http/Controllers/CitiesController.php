@@ -19,13 +19,9 @@ class CitiesController extends Controller
             ];
         });
 
-        return response()->xml(
-            [
-                'channel' => [
-                    'title' => 'iタウンページ 地域の絞り込み Level2 市町村',
-                    'linkBase' => 'http://www.aok-net.jp/',
-                    'items' => $items->all()
-                ]
-            ]);
+        $title = 'iタウンページ 地域の絞り込み Level2 市町村';
+        $linkBase = 'http://www.aok-net.jp/';
+
+        return response()->view('xmls.city', compact('title', 'linkBase', 'items'))->header('Content-Type', 'text/xml');
     }
 }

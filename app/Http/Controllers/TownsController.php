@@ -19,14 +19,9 @@ class TownsController extends Controller
             ];
         });
 
-        return response()->xml(
-            [
-                'channel' => [
-                    'title' => 'iタウンページ 地域の絞り込み Level3 町域名',
-                    'linkBase' => 'http://www.aok-net.jp/',
-                    'items' => $items->all()
-                ],
-                'pref_city_code' => $pref_code.$city_code
-            ]);
+        $title = 'iタウンページ 地域の絞り込み Level3 町域名';
+        $linkBase = 'http://www.aok-net.jp/';
+
+        return response()->view('xmls.town', compact('title', 'linkBase', 'items'))->header('Content-Type', 'text/xml');
     }
 }
