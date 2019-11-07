@@ -26,7 +26,7 @@
   </layout>
   <find>
     <item>
-      <xLink>http://itprss/?</xLink>
+      <xLink>http://itprss/</xLink>
       <link>https://aok-net.jp/itownpage/itp/public/genres/</link>
     </item>
   </find>
