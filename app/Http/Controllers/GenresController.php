@@ -19,40 +19,11 @@ class GenresController extends Controller
             ];
         });
 
-        return response()->xml(
-            [
-                'channel' => [
-                    'channelId' => 'tpage',
-                    'title' => 'タウンページ 大ジャンル',
-                    'link' => 'https://itp.ne.jp/genre_dir/',
-                    'linkBase' => 'http://www.aok-net.com/gootownpage/1.00/',
-                    'items' => $items->all()
-                ],
-                'layout' => [
-                    'item' => [
-                        'RegText' => [ 'scope' => 'http://www.aok-net.com/gootownpage/1.00/']
-                    ],
-                    'item' => [
-                        'RegText' => [ 'scope' => 'http://www.aok-net.com/gootownpage/1.00/']
-                    ]
-                ],
-                'find' => [
-                    'item' => [
-                        'xLink' => 'http://itprss/?',
-                        'link' => 'https://itp.ne.jp/dir_result/?',
-                    ],
-                    'item' => [
-                        'xLink' => 'http://itprss/?',
-                        'link' => 'https://itp.ne.jp/dir_result/?',
-                    ]
-                ],
-                'keyword' => [
-                    'item' => [
-                        'input' => 'kw=',
-                    ]
-                ]
-            ]
-        );
-    }
 
+        $title = 'iタウンページ タウンページ 大ジャンル';
+        $link = "https://aok-net.jp/itownpage/itp/public/genres/";
+        $linkBase = 'https://aok-net.jp/itownpage/itp/public/';
+
+        return response()->view('xmls.genre', compact('title', 'link', 'linkBase', 'items'))->header('Content-Type', 'text/xml');
+    }
 }
