@@ -15,9 +15,4 @@
     @endforeach
 
   </channel>
-  <find>
-    <item>
-      <xLink>itownpage/1.00/</xLink>
-    </item>
-  </find>
 </channels-find>
