@@ -11,11 +11,11 @@ class CitiesController extends Controller
     {
         $collection = City::where('pref_code', $pref_code)->get();
 
-        $items = $collection->map(function ($item, $key) {
+        $items = $collection->map(function ($item, $key) use($pref_code) {
             return [
                 'title' => $item->name,
                 'category' => $item->name,
-                'param' => $item->code,
+                'param' => $pref_code.$item->code,
             ];
         });
 
