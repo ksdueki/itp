@@ -9,13 +9,14 @@ class TownsController extends Controller
 {
     public function index($pref_code, $city_code)
     {
-        $collection = Town::where('pref_city_code', $pref_code.$city_code)->get();
+        $pref_city_code = $pref_code.$city_code;
+        $collection = Town::where('pref_city_code', $pref_city_code)->get();
 
-        $items = $collection->map(function ($item, $key) {
+        $items = $collection->map(function ($item, $key) use($pref_city_code){
             return [
                 'title' => $item->name,
                 'category' => $item->name,
-                'param' => $item->code,
+                'param' => $pref_city_code.$item->code,
             ];
         });
 
