@@ -17,22 +17,10 @@
     @endforeach
 
   </channel>
-  <layout>
-    <item>
-      <RegText>
-        <scope>https://aok-net.jp/itownpage/itp/public/</scope>
-      </RegText>
-    </item>
-  </layout>
   <find>
     <item>
       <xLink>http://itprss/</xLink>
-      <link>https://aok-net.jp/itownpage/itp/public/genres/</link>
+      <link>https://itp.ne.jp/dir_result/</link>
     </item>
   </find>
-  <keyword>
-    <item>
-      <input>kw=</input>
-    </item>
-  </keyword>
 </channels-find>

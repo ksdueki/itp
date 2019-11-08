@@ -21,7 +21,7 @@ class GenresController extends Controller
 
 
         $title = 'iタウンページ タウンページ 大ジャンル';
-        $link = "https://aok-net.jp/itownpage/itp/public/genres/";
+        $link = "https://itp.ne.jp/";
         $linkBase = 'https://aok-net.jp/itownpage/itp/public/';
 
         return response()->view('xmls.genre', compact('title', 'link', 'linkBase', 'items'))->header('Content-Type', 'text/xml');

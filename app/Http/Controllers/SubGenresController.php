@@ -25,7 +25,7 @@ class SubGenresController extends Controller
             return [
                 'title' => $item->title,
                 'category' => $genre->title."/".$item->title,
-                'param' => $item->param,
+                'param' => $genre->param."_".$item->param,
             ];
         });
 
