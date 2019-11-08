@@ -12,7 +12,7 @@ class PrefecturesController extends Controller
         $collection = Prefecture::all();
         $items = $collection->map(function ($item, $key) {
             return [
-                'category' => $item->name,
+                'category' => $item->region . "/" . $item->name,
                 'param' => $item->code,
                 'description' => "prefname=".$item->name,
             ];
