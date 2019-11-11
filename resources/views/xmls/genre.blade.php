@@ -8,6 +8,12 @@
     <link>{{ $link }}</link>
     <linkBase>{{ $linkBase }}</linkBase>
 
+    <item id="Keyword">
+      <category>キーワード検索</category>
+      <param>
+      </param>
+    </item>
+
     @foreach($items as $item)
     <item>
       <title>{{ $item["title"] }}</title>
@@ -17,10 +23,20 @@
     @endforeach
 
   </channel>
+
   <find>
+    <item id="Keyword">
+      <xLink>http://itprss/?</xLink>
+      <link>https://itp.ne.jp/</link>
+    </item>
     <item>
       <xLink>http://itprss/</xLink>
-      <link>https://itp.ne.jp/dir_result/</link>
+      <link>https://itp.ne.jp/</link>
     </item>
   </find>
+  <keyword>
+    <item id="Keyword">
+      <input name="キーワード"></input>
+    </item>
+  </keyword>
 </channels-find>
